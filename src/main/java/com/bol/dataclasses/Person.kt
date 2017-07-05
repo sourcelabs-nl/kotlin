@@ -1,6 +1,9 @@
 package com.bol.dataclasses
 
-data class KotlinPerson(
+/**
+ * Kotlin equivalent for the Java class in the same package
+ */
+data class Person(
         val firstname: String,
         val lastname: String,
         var email: String = "",
@@ -8,9 +11,9 @@ data class KotlinPerson(
 )
 
 fun main(args: Array<String>) {
-    val person = KotlinPerson("Some", "Guy", "someguy@someplace.com", 21)
+    val person = Person("Some", "Guy", "someguy@someplace.com", 21)
     val copy = person.copy()
-    if(person == copy && person !== copy) {
+    if (person == copy && person !== copy) {
         println("Equal but not the same instance")
     }
     println(person.toString())

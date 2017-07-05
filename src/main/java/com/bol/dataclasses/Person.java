@@ -1,5 +1,8 @@
 package com.bol.dataclasses;
 
+/**
+ * Java Person Pojo, containing comparable functionality to the Kotlin data class.
+ */
 public class Person implements Cloneable {
 
     private String firstname;

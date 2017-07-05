@@ -12,7 +12,7 @@ class ServerConfig(
 /**
  * Example of a few ways to construct a new instance of an object.
  *
- * Notice the usage of default and named paramters
+ * Notice the usage of default and named parameters
  */
 fun main(args: Array<String>) {
     // Instantiate with only the one required parameter
