@@ -1,4 +1,4 @@
-package com.bol.dataclass;
+package com.bol.dataclasses;
 
 public class Person implements Cloneable {
 
@@ -24,6 +24,10 @@ public class Person implements Cloneable {
 
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(final String email) {
+        this.email = email;
     }
 
     public int getAge() {

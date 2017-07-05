@@ -1,9 +1,9 @@
-package com.bol.dataclass
+package com.bol.dataclasses
 
-data class KotlinPerson (
+data class KotlinPerson(
         val firstname: String,
-        val lastname : String,
-        val email: String,
+        val lastname: String,
+        var email: String = "",
         val age: Int
 )
 
