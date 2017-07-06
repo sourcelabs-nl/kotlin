@@ -5,6 +5,7 @@ Simple project showing some of the features Kotlin offers to Java developers. Wh
 # Topics covered (so far)
 
  - Constructors
+  - Named parameters
  - Functions
  - Higher order functions
  - Data classes
