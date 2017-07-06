@@ -3,18 +3,25 @@ package com.bol.dataclasses;
 /**
  * Java Person Pojo, containing comparable functionality to the Kotlin data class.
  */
-public class Person implements Cloneable {
+public final class JavaPerson {
 
-    private String firstname;
-    private String lastname;
+    private final String firstname;
+    private final String lastname;
     private String email;
     private int age;
 
-    public Person(final String firstname, final String lastname, final String email, final int age) {
+    public JavaPerson(final String firstname, final String lastname, final String email, final int age) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.age = age;
+    }
+
+    public JavaPerson(final JavaPerson source) {
+        this.firstname = source.firstname;
+        this.lastname = source.lastname;
+        this.email = source.email;
+        this.age = source.age;
     }
 
     public String getFirstname() {
@@ -37,9 +44,8 @@ public class Person implements Cloneable {
         return age;
     }
 
-    @Override
-    protected Person clone() throws CloneNotSupportedException {
-        return new Person(this.getFirstname(), this.getLastname(), this.getEmail(), this.getAge());
+    protected JavaPerson copy() {
+        return new JavaPerson(this);
     }
 
     @Override
@@ -47,12 +53,12 @@ public class Person implements Cloneable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        final Person person = (Person) o;
+        final JavaPerson that = (JavaPerson) o;
 
-        if (age != person.age) return false;
-        if (firstname != null ? !firstname.equals(person.firstname) : person.firstname != null) return false;
-        if (lastname != null ? !lastname.equals(person.lastname) : person.lastname != null) return false;
-        return email != null ? email.equals(person.email) : person.email == null;
+        if (age != that.age) return false;
+        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
+        if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
+        return email != null ? email.equals(that.email) : that.email == null;
     }
 
     @Override
@@ -66,7 +72,7 @@ public class Person implements Cloneable {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "JavaPerson{" +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
@@ -75,9 +81,9 @@ public class Person implements Cloneable {
     }
 
     public static void main(String[] args) throws Exception {
-        final Person person = new Person("Some", "Guy", "someguy@someplace.com", 21);
-        final Person copy = person.clone();
-        if(person.equals(copy) && person != copy) {
+        final JavaPerson person = new JavaPerson("Some", "Guy", "someguy@someplace.com", 21);
+        final JavaPerson copy = person.copy();
+        if (person.equals(copy) && person != copy) {
             System.out.println("Equal but not the same instance");
         }
         System.out.println(person.toString());
