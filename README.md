@@ -23,7 +23,7 @@ Simple project showing some of the features Kotlin offers to Java developers. Wh
    - Equals
    - Creating copies
  - Generics
-  - Covariant generics ```<out T>```
-  - Contravariant generics ```<in T>```
-  - Invariant generics ```<T>```
-  - Wildcards ```<*>```
+   - Covariant generics ```<out T>```
+   - Contravariant generics ```<in T>```
+   - Invariant generics ```<T>```
+   - Wildcards ```<*>```
