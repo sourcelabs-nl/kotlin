@@ -2,7 +2,11 @@
 
 Simple project showing some of the features Kotlin offers to Java developers. Where applicable, this will be accompanied by some Java code showing the difference in syntax and possibilities.
 
-# Topics covered (so far)
+# Topics covered
+
+This is still very much a work-in-progress, but for the time being please have a look at the topics covered in this codebase.
+
+If there are any mistakes, misconceptions or missing examples, feel free to let me know.
 
 ## Constructors
 - Named parameters ```SomeType(val name: String) -> val type = SomeType(name = "Name")```
