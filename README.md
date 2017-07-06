@@ -31,7 +31,13 @@ SomeType(val name: String = "name")
 
 #### Init blocks 
 ```kotlin
-init { // initialize the type }
+class SomeType(val firstname: String, val lastname: String) {
+    private val fullname:String
+    
+    init { 
+        fullname = firstname + lastname 
+    }
+}
 ```
 
 ## Functions
