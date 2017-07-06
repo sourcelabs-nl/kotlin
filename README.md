@@ -12,21 +12,20 @@ If you feel there are any mistakes, misconceptions, missing or unclear examples,
 
 ## Constructors
 
-#### Named parameters 
-
-```kotlin
-SomeType(val name: String)
-val type = SomeType(name = "Name")
-```
-
 #### Property declarations 
 ```kotlin
-SomeType(val name: String)
+class SomeType(val name: String)
+```
+
+#### Named parameters 
+```kotlin
+class SomeType(val name: String)
+val type = SomeType(name = "Name")
 ```
 
 #### Default parameters 
 ```kotlin
-SomeType(val name: String = "name")
+class SomeType(val name: String = "name")
 ```
 
 #### Init blocks 
