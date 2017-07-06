@@ -22,6 +22,8 @@ If there are any mistakes, misconceptions or missing examples, feel free to let 
 ## Higher order functions
 - Functions returning functions
 - Functions taking functions as parameters
+- Invoking function references
+- Passing function references to functions
 
 ## Data classes
 - General data class definition
