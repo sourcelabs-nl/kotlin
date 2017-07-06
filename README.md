@@ -74,6 +74,13 @@ Usage: val values = (0..25).filter (modulo(5))
 ```
 
 #### Functions taking functions as parameters
+```kotlin
+fun doBestEffort(function: () -> Unit) {
+    function()
+}
+Usage: doBestEffort { println("Lambda Syntax") }
+```
+
 #### Invoking function references
 #### Passing function references to functions
 
