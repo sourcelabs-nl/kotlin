@@ -1,6 +1,8 @@
-# kotlin-java
+# Kotlin - Java
 
-Simple project showing some of the features Kotlin offers to Java developers. Where applicable, this will be accompanied by some Java code showing the difference in syntax and possibilities.
+Simple project showing some of the features Kotlin offers to Java developers. Where applicable, this will be accompanied by some Java code showing the difference in syntax and functionality between both languages.
+
+This is intented to be a unidirectional comparison; I will focus on features in Kotlin and if possible map them to Java - not the other way around.
 
 # Topics covered
 
