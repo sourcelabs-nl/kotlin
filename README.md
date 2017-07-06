@@ -13,27 +13,43 @@ If you feel there are any mistakes, misconceptions, missing or unclear examples,
 ## Constructors
 
 #### Named parameters 
-```SomeType(val name: String) -> val type = SomeType(name = "Name")```
+
+```kotlin
+SomeType(val name: String)
+val type = SomeType(name = "Name")
+```
 
 #### Property declarations 
-```SomeType(val name: String)```
+```kotlin
+SomeType(val name: String)
+```
 
 #### Default parameters 
-```SomeType(val name: String = "name")```
+```kotlin
+SomeType(val name: String = "name")
+```
 
 #### Init blocks 
-```init { // initialize the type }```
+```kotlin
+init { // initialize the type }
+```
 
 ## Functions
 
 #### Top-level functions 
-```fun sum(left: Int, right: Int) { return left + right } -> val total = sum(1, 3) ```
+```kotlin
+fun sum(left: Int, right: Int) { return left + right } -> val total = sum(1, 3) 
+```
 
 #### Extension functions 
-```fun Int.add(add: Int) { return this + right } -> val total = 1.add(3) ```
+```kotlin
+fun Int.add(add: Int) { return this + right } -> val total = 1.add(3) 
+```
 
 #### Infix functions 
-```infix fun Int.and(add: Int) { return this + right } -> val total = 1 and 3 ```
+```kotlin
+infix fun Int.and(add: Int) { return this + right } -> val total = 1 and 3 
+```
 
 ## Higher order functions
 
