@@ -11,11 +11,16 @@ fun toTimeString(time: LocalTime = LocalTime.now()): String {
 }
 
 /**
- * Extension function
+ * Extension function, extending LocalTime with an additional method
  */
 fun LocalTime.asString(): String {
     return DateTimeFormatter.ofPattern("hh:mm:ss").format(this)
 }
+
+/**
+ * All functions can be written as expressions too, allowing you to omit the return type and return keyword.
+ */
+fun LocalTime.asStringExpression() = DateTimeFormatter.ofPattern("hh:mm:ss").format(this)
 
 fun main(args: Array<String>) {
     // Use a top-level (utility) function
@@ -29,4 +34,7 @@ fun main(args: Array<String>) {
 
     // Call the extension function directly on the type that was extended
     println(LocalTime.now().asString())
+
+    // The extension function is expression format can be called similarly and will yield the same result
+    println(LocalTime.now().asStringExpression())
 }
