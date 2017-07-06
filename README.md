@@ -71,22 +71,56 @@ Usage: val values = (0..25).filter (modulo(5))
 
 #### Functions taking functions as parameters
 ```kotlin
-fun doBestEffort(function: () -> Unit) {
+fun execute(function: () -> Unit) {
     function()
 }
-Usage: doBestEffort { println("Lambda Syntax") }
+Usage: execute { println("Lambda Syntax") }
+```
+
+#### Passing function references to functions
+```kotlin
+fun function(){ println("Executed") }
+Usage: execute(::function())
 ```
 
 #### Invoking function references
-#### Passing function references to functions
+```kotlin
+fun modulo(input: Int): (Int) -> Boolean = {
+    it % input == 0
+}
+val moduloReference = modulo(3)
+Usage: val result = moduloReference.invoke(5)
+```
 
 ## Data classes
 
 #### General data class definition
+```kotlin
+data class Person(val name: String)
+``` 
 #### Property declarations
-#### Tostring
-#### Equals
+```kotlin
+data class Person(
+    val name: String,
+    val lastname: String,
+    var email: String, // mutable
+)
+``` 
+
+#### Generated functions
+```kotlin
+val person: Person("First", "Last", "first@last.com")
+person.toString() 
+person.equals() 
+person.hashcode() 
+```
+
 #### Creating copies
+```kotlin
+val person: Person("First", "Last", "first@last.com")
+val copiedPerson = person.copy() // or:
+val copiedPerson = person.copy(email = "new@newemail.com")
+```
 
 ## Generics
     
