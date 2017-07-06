@@ -65,6 +65,14 @@ Usage: val total = 1 and 3
 ## Higher order functions
 
 #### Functions returning functions
+```kotlin
+fun modulo(input: Int): (Int) -> Boolean = {
+    it % input == 0
+}
+
+Usage: val values = (0..25).filter (modulo(5))
+```
+
 #### Functions taking functions as parameters
 #### Invoking function references
 #### Passing function references to functions
