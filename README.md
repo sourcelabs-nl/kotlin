@@ -6,7 +6,24 @@ Simple project showing some of the features Kotlin offers to Java developers. Wh
 
  - Constructors
    - Named parameters
+   - Default parameters
+   - Property declarations
+   - Init blocks
  - Functions
+   - Top-level functions
+   - Extension functions
+   - Infix functions
  - Higher order functions
+   - Functions returning functions
+   - Functions taking functions as parameters
  - Data classes
- - Methods
+   - General data class definition
+   - Property declarations
+   - Tostring
+   - Equals
+   - Creating copies
+ - Generics
+  - Covariant generics ```<out T>```
+  - Contravariant generics ```<in T>```
+  - Invariant generics ```<T>```
+  - Wildcards ```<*>```
