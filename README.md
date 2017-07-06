@@ -6,9 +6,9 @@ This is intented to be a unidirectional comparison; I will focus on features in 
 
 # Topics covered
 
-This is still very much a work-in-progress, but for the time being please have a look at the topics covered in this codebase.
+This is still very much a work-in-progress, but for the time being please have a look at the topics covered in this codebase. The list is below and should be fairly complete.
 
-If there are any mistakes, misconceptions or missing examples, feel free to let me know.
+If you feel there are any mistakes, misconceptions, missing or unclear examples, feel free to let me know.
 
 ## Constructors
 - Named parameters ```SomeType(val name: String) -> val type = SomeType(name = "Name")```
