@@ -5,7 +5,10 @@ Simple project showing some of the features Kotlin offers to Java developers. Wh
 # Topics covered (so far)
 
  - Constructors
-   - Named parameters ```Type(val name: String) -> val type = Type(name = "Name")```
+   - Named parameters
+
+```Type(val name: String) -> val type = Type(name = "Name")```
+   
    - Property declarations ```Type(val name: String)```
    - Default parameters ```Type(val name: String = "name")```
    - Init blocks ```init { // initialize the type }```
