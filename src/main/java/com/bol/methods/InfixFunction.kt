@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
 
     // Infix notation
     val timeSpent = LocalTime.of(10, 55, 0) until LocalTime.of(12, 21, 0)
-    //                                                    ^^^^^
+    //                                      ^^^^^
 
     println("We've spent ${timeSpent.toMinutes()} minutes waiting for the bus.")
 }
