@@ -43,17 +43,23 @@ class SomeType(val firstname: String, val lastname: String) {
 
 #### Top-level functions 
 ```kotlin
-fun sum(left: Int, right: Int) { return left + right } -> val total = sum(1, 3) 
+fun sum(left: Int, right: Int) { return left + right } 
+
+Usage: val total = sum(1, 3) 
 ```
 
 #### Extension functions 
 ```kotlin
-fun Int.add(add: Int) { return this + right } -> val total = 1.add(3) 
+fun Int.add(add: Int) { return this + right } 
+
+Usage: val total = 1.add(3) 
 ```
 
 #### Infix functions 
 ```kotlin
-infix fun Int.and(add: Int) { return this + right } -> val total = 1 and 3 
+infix fun Int.and(add: Int) { return this + right }
+
+Usage: val total = 1 and 3 
 ```
 
 ## Higher order functions
@@ -73,7 +79,19 @@ infix fun Int.and(add: Int) { return this + right } -> val total = 1 and 3
 
 ## Generics
     
-#### Covariant generics ```SomeType <out T>```
-#### Contravariant generics ```SomeType <in T>```
-#### Invariant generics ```SomeType <T>```
-#### Wildcards ```SomeType <*>```
+#### Covariant generics 
+```kotlin
+class SomeType <out T>
+```
+#### Contravariant generics
+```kotlin
+class SomeType <in T>
+```
+#### Invariant generics 
+```kotlin
+class SomeType <T>
+```
+#### Wildcards 
+```kotlin
+class SomeType <*>
+```
