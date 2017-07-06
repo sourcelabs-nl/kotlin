@@ -1,4 +1,4 @@
-package com.bol.higherorder
+package nl.sourcelabs.higherorder
 
 import java.io.File
 import java.io.FileInputStream

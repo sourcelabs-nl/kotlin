@@ -1,4 +1,4 @@
-package com.bol.dataclasses;
+package nl.sourcelabs.dataclasses;
 
 /**
  * Java Person Pojo, containing comparable functionality to the Kotlin data class.

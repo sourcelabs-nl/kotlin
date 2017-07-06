@@ -1,4 +1,4 @@
-package com.bol.constructors;
+package nl.sourcelabs.constructors;
 
 public class Constructors {
 

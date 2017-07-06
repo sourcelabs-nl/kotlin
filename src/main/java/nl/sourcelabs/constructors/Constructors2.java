@@ -1,11 +1,11 @@
-package com.bol.constructors;
+package nl.sourcelabs.constructors;
 
 import java.time.LocalDate;
 import java.time.Period;
 
 public class Constructors2 {
     public static void main(String[] args) {
-        final Person person = new Person("Jay", LocalDate.of(1980, 6, 6));
+        final JavaPerson person = new JavaPerson("Jay", LocalDate.of(1980, 6, 6));
         System.out.println(person.getAge());
     }
 }

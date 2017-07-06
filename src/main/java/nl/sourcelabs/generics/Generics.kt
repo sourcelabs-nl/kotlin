@@ -1,4 +1,4 @@
-package com.bol.generics
+package nl.sourcelabs.generics
 
 /**
  * This is called an invariant generic (neither co- nor contravariant, see below)

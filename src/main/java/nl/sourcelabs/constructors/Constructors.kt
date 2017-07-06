@@ -1,4 +1,4 @@
-package com.bol.constructors
+package nl.sourcelabs.constructors
 
 /**
  * Constructors can have default values and the keyword val/var defines whether or not the properties are

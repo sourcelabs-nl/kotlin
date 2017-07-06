@@ -1,4 +1,4 @@
-package com.bol.generics;
+package nl.sourcelabs.generics;
 
 import java.util.ArrayList;
 import java.util.List;

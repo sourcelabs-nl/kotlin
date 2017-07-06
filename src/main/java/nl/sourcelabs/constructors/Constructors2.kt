@@ -1,4 +1,4 @@
-package com.bol.constructors
+package nl.sourcelabs.constructors
 
 import java.time.LocalDate
 import java.time.Period

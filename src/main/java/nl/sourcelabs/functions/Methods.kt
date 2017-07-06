@@ -1,4 +1,4 @@
-package com.bol.methods
+package nl.sourcelabs.functions
 
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter

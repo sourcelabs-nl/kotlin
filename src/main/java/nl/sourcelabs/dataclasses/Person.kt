@@ -1,4 +1,4 @@
-package com.bol.dataclasses
+package nl.sourcelabs.dataclasses
 
 /**
  * Kotlin equivalent for the Java class in the same package
