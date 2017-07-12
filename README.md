@@ -23,7 +23,7 @@ fun doSomething() {
 }
 ```
 
-#### Strong type inference
+#### Type inference
 
 ```kotlin
 // Explicit, something can't be anything other than string, so type can be omitted
@@ -68,12 +68,71 @@ if(instance is String) { // is is the equivalent for instanceof
 }
 ```
 
-## TODO Class Properties
+## Properties
 
-- Var
-- Val
-- Local (zonder var/val)
-- const
+#### Mutable properties
+
+```kotlin
+var someProperty = "value"
+someProperty = "newValue" // assign new value
+```
+
+#### Immutable properties
+
+```kotlin
+val someProperty = "value"
+someProperty = "newValue" // compiler error, someProperty is final
+```
+
+#### Getters and Setters
+
+Kotlin advocates property access rather than accessor methods. If the need arises, it's possible to explicitly provide a getter for the property. 
+
+The implicit variable 'field' references the property.
+
+```kotlin
+var stringRep: String = "Default"
+    get() = field // return the actual value for the field
+    set(value) {
+        if(value.length < 10) // conditional set, only set the value if the parameter is less than 10 characters in size
+            field = value
+    }
+```
+
+If you need annotations on setters (for injection perhaps) there is a shorthand syntax.
+
+```kotlin
+var stringRep: String = "Default"
+    @Inject set // concise declaration for setter injection
+```
+
+Visibility can also be modified using similar syntax.
+
+```kotlin
+var stringRep: String = "Default"
+    private set // Setter has private access
+```
+
+#### Local properties
+
+```kotlin
+class Thing(localProperty: String) { // property is only in scope in constructor
+}
+```
+
+#### Compile time constant
+
+Constant declaration. This has a few limitations, as the value has to be:
+
+- Top-level in a class
+- String or primitive
+- Can't declare custom getter
+
+```kotlin
+const val path = "/api/users" // Compile time constant
+
+@GetMapping(path) fun findUsers() { ... } // Can be used as annotation values
+```
 
 ## TODO Accessors
 
