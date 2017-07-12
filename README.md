@@ -183,9 +183,55 @@ class UserResource {
 
 ## TODO Keywords
 
-- suspend
 - lateinit
+
+Indicates that a property will be initialized lazily and will not be null.
+
+```kotlin
+class MyComponent {
+    @Value("${config.property}")
+    lateinit var myVar: String
+}
+```
+
 - by lazy
+
+By lazy is a build in delegate that takes a lambda and returns an instance of Lazy<T>.
+
+Can be useful for expensive initialization where computation is required.
+
+```kotlin
+val lazyValue: String by lazy {
+    println("computed!")
+    "Hello"
+}
+```
+
+Invoking lazyValue will initialize only once.
+
+```kotlin
+fun main(args: Array<String>) {
+    println(lazyValue)
+    println(lazyValue)
+}
+```
+Output is:
+ 
+ computed!
+ Hello
+ Hello
+
+Lazy initialization comes with the cost of Synchronization. This behaviour can be changed when multi threading is not an issue.
+
+- suspend
+
+Indicates a suspension point (this is currently an experimental feature from kotlinx).
+
+To be used on a function that is used in the context of coroutines.
+
+```kotlin
+suspend fun someSlowFunction() { /* slow stuff happening */ }
+```
 
 ## TODO Returns and jumps
 
