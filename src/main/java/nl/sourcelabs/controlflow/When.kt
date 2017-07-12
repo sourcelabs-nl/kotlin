@@ -27,4 +27,19 @@ object When {
             else -> print("unknown")
         }
     }
+
+    fun whenForIfElseIf(value: Int) {
+        val i = value
+
+        val whatsUpWithI = when {
+            i == 42 -> "correct answer"
+            i % 2 == 0 -> "even"
+            else -> "odd"
+        }
+        print(whatsUpWithI)
+    }
+}
+
+fun main(args: Array<String>) {
+    When.whenForIfElseIf(2)
 }
