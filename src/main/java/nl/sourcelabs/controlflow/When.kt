@@ -19,4 +19,12 @@ object When {
             else -> print("unknown")
         }
     }
+
+    fun yesNoTrueFalseKotlinMultiple(value: String) {
+        when (value) {
+            "YES", "yes", "y" -> print("true")
+            "NO", "no", "n" -> print("false")
+            else -> print("unknown")
+        }
+    }
 }
