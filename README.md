@@ -194,6 +194,12 @@ class MyComponent {
 }
 ```
 
+lateinit is not null, therefore the following is not allowed:
+
+```kotlin
+lateinit var myVar: String?
+```
+
 - by lazy
 
 By lazy is a build in delegate that takes a lambda and returns an instance of Lazy<T>.
