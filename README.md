@@ -181,9 +181,9 @@ class UserResource {
 - if
 - when
 
-## TODO Keywords
+## Keywords
 
-- lateinit
+#### lateinit
 
 Indicates that a property will be initialized lazily and will not be null.
 
@@ -194,13 +194,13 @@ class MyComponent {
 }
 ```
 
-lateinit is not null, therefore the following is not allowed:
+lateinit does not work with nullable, therefore the following is not allowed:
 
 ```kotlin
 lateinit var myVar: String?
 ```
 
-- by lazy
+#### by lazy
 
 By lazy is a build in delegate that takes a lambda and returns an instance of Lazy<T>.
 
@@ -229,7 +229,7 @@ Output is:
 
 Lazy initialization comes with the cost of Synchronization. This behaviour can be changed when multi threading is not an issue.
 
-- suspend
+#### suspend
 
 Indicates a suspension point (this is currently an experimental feature from kotlinx).
 
