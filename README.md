@@ -60,8 +60,13 @@ fun break() {
 }
 ```
 
-- smart casts
-- final
+#### Smart casts 
+
+```kotlin
+if(instance is String) { // is is the equivalent for instanceof
+    instance.toUpperCase() // inside the if-block instance is implicitly cast to String
+}
+```
 
 ## TODO Class Properties
 
