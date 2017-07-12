@@ -94,7 +94,7 @@ The implicit variable 'field' references the property.
 var stringRep: String = "Default"
     get() = field // return the actual value for the field
     set(value) {
-        if(value.length < 10) // conditional set, only set the value if the parameter is less than 10 characters in size
+        if(value.length < 10) // conditional set, if length < 10
             field = value
     }
 ```
