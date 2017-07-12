@@ -10,7 +10,66 @@ This is still very much a work-in-progress, but for the time being please have a
 
 If you feel there are any mistakes, misconceptions, missing or unclear examples, feel free to let me know.
 
-## Constructors
+## TODO Language Basics
+
+- Type inference
+- null-safe
+- checked exceptions
+- smart casts
+- final
+
+## TODO Class Properties
+
+- Var
+- Val
+- Local (zonder var/val)
+- const
+
+## TODO Accessors
+
+- private
+- public 
+- internal (package)
+
+## TODO Classes
+
+- Open
+- Sealed
+- object (singleton)
+- abstract
+- interface
+
+## TODO null-safety
+
+- !!
+- Elvis operator .? 
+- etc.
+
+## TODO Lambda syntax
+
+- examples
+
+## TODO Controlling flow
+
+- if
+- when
+
+## TODO Keywords
+
+- suspend
+- lateinit
+- by lazy
+
+## TODO Returns and jumps
+
+- labels
+- etc
+
+## TODO Constructors
+
+#### Private constructors
+
+TODO
 
 #### Property declarations 
 ```kotlin
