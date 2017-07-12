@@ -10,7 +10,7 @@ This is still very much a work-in-progress, but for the time being please have a
 
 If you feel there are any mistakes, misconceptions, missing or unclear examples, feel free to let me know.
 
-## TODO Language Basics
+## Language Basics
 
 #### Semicolon optional
 
