@@ -26,7 +26,7 @@ fun doSomething() {
 #### Strong type inference
 
 ```kotlin
-// Overly explicit, something can't be anything other than string
+// Explicit, something can't be anything other than string, so type can be omitted
 val something: String = "This is a string" 
 
 // Infers that something is of type String
