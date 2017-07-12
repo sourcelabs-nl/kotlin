@@ -31,9 +31,6 @@ val something: String = "This is a string"
 
 // Infers that something is of type String
 val something = "This is a string" 
-
-// be specific if you want to use a different target type
-val something: Object = string 
 ```
 
 #### Null-safety
