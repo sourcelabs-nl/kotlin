@@ -139,9 +139,9 @@ class Thing(nameParam: String) { // property is only in scope in constructor
 
 Constant declaration. This has a few limitations, as the value has to be:
 
-- Top-level in a file
-- String or primitive
-- Can't declare custom getter
+- Top-level in a file;
+- Value has to be a string or a primitive;
+- Can't declare custom getter for the property.
 
 ```kotlin
 const val path = "/api/users" // Compile time constant
