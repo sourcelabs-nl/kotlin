@@ -139,14 +139,17 @@ class Thing(nameParam: String) { // property is only in scope in constructor
 
 Constant declaration. This has a few limitations, as the value has to be:
 
-- Top-level in a class
+- Top-level in a file
 - String or primitive
 - Can't declare custom getter
 
 ```kotlin
 const val path = "/api/users" // Compile time constant
 
-@GetMapping(path) fun findUsers() { ... } // Can be used as annotation values
+class UserResource {
+    @GetMapping(path) 
+    fun findUsers(): List<User> { ... } // Can be used as annotation values
+}
 ```
 
 ## TODO Accessors
