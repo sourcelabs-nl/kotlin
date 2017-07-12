@@ -32,7 +32,7 @@ val something: String = "This is a string"
 // Infers that something is of type String
 val something = "This is a string" 
 
-// be specific if you want to use a different
+// be specific if you want to use a different target type
 val something: Object = string 
 ```
 
@@ -46,7 +46,20 @@ fun operate(context: String?): String {
 }
 ```
 
-- checked exceptions
+#### No 'new' keyword
+
+```kotlin
+val person: Person() // <class>() implies constructor call
+```
+
+#### Checked exceptions
+
+```kotlin
+fun break() { 
+    throw IOException("")
+}
+```
+
 - smart casts
 - final
 
