@@ -19,7 +19,7 @@ Kotlin has semicolon inference. It uses the pseudo-token SEMI (semicolon or newl
 ```kotlin
 fun doSomething() {
     val someString = "someString" // semicolon optional
-    if(true) { operation1(); operation() } // Semicolon required
+    if(true) { operation1(); operation() } // Semicolon required to separate statements
 }
 ```
 
@@ -33,13 +33,23 @@ val something: String = "This is a string"
 val something = "This is a string" 
 ```
 
-#### Null-safety
+#### Null values
+
+Kotlin types are not nullable by default. When interoperating with Java, they can at times be null. To allow nulls in your code, append a '?' after the parameter type. Kotlin will force you to deal with possible null values.
 
 ```kotlin
-// String? means string can be null
-fun operate(context: String?): String { 
-    // ?. only executes if context isn't null, ?: specifies a default in case of null
-    return context?.toUpperCase() ?: "" 
+fun operate(context: String?) { // context could be null 
+}
+```
+
+#### Nullsafe (Elvis) operator
+
+When parameters are nullable, code must be written defensively to prevent nullpointers. The nullsafe operator will only access the function or property when the lefthand side of the statement is not null. Additionally ?: allows you to provide a default value in case any of the properties is null.
+
+```kotlin
+fun getContracteeName(contract: Contract?): String { 
+    // ?. only executes if contract isn't null, ?: specifies a default in case of null
+    return contract?.contractee?.name ?: "Unknown" 
 }
 ```
 
