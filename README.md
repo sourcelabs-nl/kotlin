@@ -12,8 +12,24 @@ If you feel there are any mistakes, misconceptions, missing or unclear examples,
 
 ## TODO Language Basics
 
-- Type inference
-- null-safe
+#### Strong type inference
+
+```kotlin
+val something: String = "This is a string" // Overly explicit, something can't be anything other than string
+val something = "This is a string" // Infers that something is of type String
+val something: Object = string // be specific if you want to use a different
+```
+
+#### Null-safety
+
+```kotlin
+// String? means string can be null
+fun operate(context: String?): String { 
+    // ?. only executes if context isn't null, ?: specifies a default in case of null
+    return context?.toUpperCase() ?: "" 
+}
+```
+
 - checked exceptions
 - smart casts
 - final
