@@ -115,8 +115,16 @@ var stringRep: String = "Default"
 
 #### Local properties
 
+Local properties are transient, unlike var/val they will not become properties in the class.
+
+Primary constructors can't have a code block, so if any initializing logic is required, this can be encapsulated in the init block.
+
 ```kotlin
-class Thing(localProperty: String) { // property is only in scope in constructor
+class Thing(nameParam: String) { // property is only in scope in constructor
+    val name = nameParam // nameParam can be used to initialize properties too
+    init {
+        println(nameParam) // nameParam is in scope in the init block as well
+    }
 }
 ```
 
