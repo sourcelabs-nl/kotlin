@@ -12,12 +12,28 @@ If you feel there are any mistakes, misconceptions, missing or unclear examples,
 
 ## TODO Language Basics
 
+#### Semicolon optional
+
+Kotlin has semicolon inference. It uses the pseudo-token SEMI (semicolon or newline) to separate declarations, statements and the like. Only in some cases, such as writing several statements on one line Kotlin requires an explicit semicolon.
+
+```kotlin
+fun doSomething() {
+    val someString = "someString" // semicolon optional
+    if(true) { operation1(); operation() } // Semicolon required
+}
+```
+
 #### Strong type inference
 
 ```kotlin
-val something: String = "This is a string" // Overly explicit, something can't be anything other than string
-val something = "This is a string" // Infers that something is of type String
-val something: Object = string // be specific if you want to use a different
+// Overly explicit, something can't be anything other than string
+val something: String = "This is a string" 
+
+// Infers that something is of type String
+val something = "This is a string" 
+
+// be specific if you want to use a different
+val something: Object = string 
 ```
 
 #### Null-safety
