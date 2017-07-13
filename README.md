@@ -38,8 +38,7 @@ val something = "This is a string"
 Kotlin types are not nullable by default. When interoperating with Java, they can at times be null. To allow nulls in your code, append a '?' after the parameter type. Kotlin will force you to deal with possible null values.
 
 ```kotlin
-fun operate(context: String?) { // context could be null 
-}
+fun operate(context: String?) { // context could be null }
 ```
 
 #### Nullsafe (Elvis) operator
