@@ -204,7 +204,7 @@ Private only to the enclosing class.
 
 ```kotlin
 class PrivateMembersClass {
-    private val privateValue ="PUBLIC"
+    private val privateValue ="PRIVATE"
     private fun privateFunction() {}
     private class PrivateInnerClass
 }
@@ -216,7 +216,7 @@ For classes that allow subclassing (i.e. are marked open) the protected modifier
 
 ```kotlin
 open class PrivateMembersClass {
-    protected val internalValue ="PUBLIC"
+    protected val internalValue ="PROTECTED"
     protected fun internalFunction() {}
     protected class internalInnerClass
 }
@@ -228,7 +228,7 @@ Members marked internal are only accessible in the same module.
 
 ```kotlin
 class PrivateMembersClass {
-    internal val internalValue ="PUBLIC"
+    internal val internalValue ="INTERNAL"
     internal fun internalFunction() {}
     internal class internalInnerClass
 }
