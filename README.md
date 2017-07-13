@@ -139,7 +139,7 @@ class Thing(nameParam: String) { // property is only in scope in constructor
 
 Constant declaration. This has a few limitations, as the value has to be:
 
-- Top-level in a file;
+- Top-level in a file - or object;
 - Value has to be a string or a primitive;
 - Can't declare custom getter for the property.
 
