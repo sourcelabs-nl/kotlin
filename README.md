@@ -431,7 +431,7 @@ person.hashcode()
 
 #### Creating copies
 ```kotlin
-val person: Person("First", "Last", "first@last.com")
+val person = Person("First", "Last", "first@last.com")
 val copiedPerson = person.copy() // or:
 val copiedPerson = person.copy(email = "new@newemail.com") // change email (or any given property)
 ```
