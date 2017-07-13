@@ -4,11 +4,7 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class KotlinWorkshopApplication {
-
-//    @Bean
-//    fun mapper() = Jackson2ObjectMapperBuilder().modulesToInstall(KotlinModule(), JavaTimeModule()).dateFormat(ISO8601DateFormat())
-}
+class KotlinWorkshopApplication
 
 fun main(args: Array<String>) {
     SpringApplication.run(KotlinWorkshopApplication::class.java, *args)
