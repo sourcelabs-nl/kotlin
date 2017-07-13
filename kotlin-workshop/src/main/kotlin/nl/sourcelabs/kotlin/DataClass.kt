@@ -22,7 +22,7 @@ data class Person(
         val firstName: String,
         val lastName: String,
         val birthDate: LocalDate,
-        var emailAdress: String) {
+        var emailAddress: String) {
 
     val fullname = "$firstName $lastName"
 
@@ -33,7 +33,7 @@ data class Person(
 
 fun main(args: Array<String>) {
     val person = Person("Jarno", "Walgemoed", LocalDate.of(1980, 6, 6), "email@bla.nl")
-    person.emailAdress = "mutable@email.com"
+    person.emailAddress = "mutable@email.com"
     println(person.fullname)
     println(person.ageAt(LocalDate.of(2000, 1, 1)))
     

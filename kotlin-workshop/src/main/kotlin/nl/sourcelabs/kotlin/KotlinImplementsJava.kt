@@ -8,5 +8,4 @@ class KotlinImplementsJava : ActionListener {
     override fun actionPerformed(e: ActionEvent?) {
         // print(e.source)
     }
-
 }
