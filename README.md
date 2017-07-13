@@ -146,16 +146,93 @@ Constant declaration. This has a few limitations, as the value has to be:
 const val path = "/api/users" // Compile time constant
 
 class UserResource {
-    @GetMapping(path) 
-    fun findUsers(): List<User> { ... } // Can be used as annotation values
+    @GetMapping(path) // Can be used as annotation values
+    fun findUsers(): List<User> { ... } 
 }
 ```
 
-## TODO Accessors
+## Top level visibility modifiers
 
-- private
-- public 
-- internal (package)
+#### Public (default) visibility
+
+Top level (inside a package) declarations are marked public by default, so the keyword can be omitted in these cases.
+
+```kotlin
+public object PublicObject
+public interface PublicInterface
+public val someValue = "value"
+public class PublicClass
+```
+
+#### Private
+
+```kotlin
+private object PrivateObject
+private interface PrivateInterface
+private val privateValue = "value"
+private class PrivateClass
+```
+
+#### Internal
+
+Visible only within a module, which is basically defined as a set of classes compiled together in project module, maven module or similar.
+
+```kotlin
+internal val internalValue = ""
+internal object InternalObject
+internal class InternalClass
+internal interface InternalInterface
+```
+
+## Class level visibility modifiers
+
+#### Public (default) visibility
+
+Class members are public by default too, so here the keyword can also be omitted.
+
+```kotlin
+class PublicMembersClass {
+    public val publicValue ="PUBLIC"
+    public fun publicFunction() {}
+    public class PublicInnerClass
+}
+```
+
+#### Private
+
+Private only to the enclosing class.
+
+```kotlin
+class PrivateMembersClass {
+    private val privateValue ="PUBLIC"
+    private fun privateFunction() {}
+    private class PrivateInnerClass
+}
+```
+
+#### Protected
+
+For classes that allow subclassing (i.e. are marked open) the protected modifier can be used to make the contents available inside any extending subclasses.
+
+```kotlin
+open class PrivateMembersClass {
+    protected val internalValue ="PUBLIC"
+    protected fun internalFunction() {}
+    protected class internalInnerClass
+}
+```
+
+#### Internal
+
+Members marked internal are only accessible in the same module.
+
+```kotlin
+class PrivateMembersClass {
+    internal val internalValue ="PUBLIC"
+    internal fun internalFunction() {}
+    internal class internalInnerClass
+}
+```
 
 ## TODO Classes
 
