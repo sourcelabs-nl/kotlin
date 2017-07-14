@@ -17,9 +17,9 @@ class PersonResource(private val personRepository: PersonRepository) {
     fun find(@PathVariable id: Int): Person {
         return personRepository.findPerson(id)
     }
-
+    
     @PostMapping
-    fun create(@RequestBody person: Person): Person {
+    fun create(person: Person): Person {
         return personRepository.save(person)
     }
 
