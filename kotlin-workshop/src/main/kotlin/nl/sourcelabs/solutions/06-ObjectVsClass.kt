@@ -8,8 +8,7 @@ package nl.sourcelabs.solutions
  * Invoke the function static from Java
  */
 object HelloworldO {
-    //@JvmStatic
-    fun sayHello(name: String) {
+    fun sayHello(name: String = "world") {
         println("Hello: $name from $this")
     }
 }
@@ -19,22 +18,23 @@ object HelloworldO {
  *
  * Write a member function sayHello(name) that prints a hello name
  */
-open class HelloworldC {
-    fun sayHello(name: String) {
+class HelloworldC {
+    fun sayHello(name: String = "world") {
         println("Hello $name for $this")
     }
-
-    //@JvmOverloads
-    fun calculateTheMeaningOfLife(int: Int = 42) = println(int)
 }
 
+/**
+ * Invoke HelloworldO sayHello
+ * Invoke HelloworldO sayHello("yourname")
+ *
+ * Invoke HelloworldC sayHello
+ * Invoke HelloworldC sayHello("yourname")
+ */
 fun main(args: Array<String>) {
-    HelloworldO.sayHello("Stephan")
+    HelloworldO.sayHello()
     HelloworldO.sayHello("Stephan")
 
+    HelloworldC().sayHello()
     HelloworldC().sayHello("Stephan")
-    HelloworldC().sayHello("Stephan")
-
-    HelloworldC().calculateTheMeaningOfLife()
-    HelloworldC().calculateTheMeaningOfLife(21)
 }
