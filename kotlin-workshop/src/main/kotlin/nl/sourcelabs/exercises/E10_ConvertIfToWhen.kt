@@ -1,15 +1,15 @@
 package nl.sourcelabs.exercises
 
-enum class IsKotlinCool {
+enum class Choice {
     YES, NO, UNKNOWN
 }
 
 class MakeUpYourMindException : RuntimeException()
 
-fun isKotlinCool(value: IsKotlinCool) : Boolean {
-    if(value == IsKotlinCool.YES) {
+fun isKotlinCool(value: Choice) : Boolean {
+    if(value == Choice.YES) {
         return true
-    } else if(value == IsKotlinCool.NO) {
+    } else if(value == Choice.NO) {
         return false
     } else {
         throw MakeUpYourMindException()
@@ -18,5 +18,5 @@ fun isKotlinCool(value: IsKotlinCool) : Boolean {
 }
 
 fun main(args: Array<String>) {
-    print(isKotlinCool(IsKotlinCool.YES)) // prints true
+    print(isKotlinCool(Choice.YES)) // prints true
 }

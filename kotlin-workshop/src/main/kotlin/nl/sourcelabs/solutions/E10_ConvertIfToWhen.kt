@@ -1,17 +1,17 @@
 package nl.sourcelabs.solutions
 
-enum class IsKotlinCool {
+enum class Choice {
     YES, NO, UNKNOWN
 }
 
 class MakeUpYourMindException : RuntimeException()
 
-fun isKotlinCool(value: IsKotlinCool) = when (value) {
-    IsKotlinCool.YES -> true
-    IsKotlinCool.NO -> false
+fun isKotlinCool(value: Choice) = when (value) {
+    Choice.YES -> true
+    Choice.NO -> false
     else -> throw MakeUpYourMindException()
 }
 
 fun main(args: Array<String>) {
-    print(isKotlinCool(IsKotlinCool.YES))
+    print(isKotlinCool(Choice.YES))
 }
