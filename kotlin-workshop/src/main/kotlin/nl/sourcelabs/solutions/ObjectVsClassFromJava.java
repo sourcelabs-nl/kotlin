@@ -1,4 +1,4 @@
-package nl.sourcelabs.kotlin;
+package nl.sourcelabs.solutions;
 
 public class ObjectVsClassFromJava {
     public static void main(String[] args) {

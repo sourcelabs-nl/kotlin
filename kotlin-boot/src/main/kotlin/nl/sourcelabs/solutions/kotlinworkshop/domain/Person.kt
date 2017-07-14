@@ -1,4 +1,4 @@
-package nl.sourcelabs.kotlin.kotlinworkshop.domain
+package nl.sourcelabs.solutions.kotlinworkshop.domain
 
 import java.time.LocalDate
 

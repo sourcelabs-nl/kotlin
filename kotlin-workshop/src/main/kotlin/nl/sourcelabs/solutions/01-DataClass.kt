@@ -1,4 +1,4 @@
-package nl.sourcelabs.kotlin
+package nl.sourcelabs.solutions
 
 import java.time.LocalDate
 import java.time.Period
@@ -13,9 +13,11 @@ import java.time.Period
  * - Add a way to get the full name for the person, which is firstName and lastName together
  *
  * - Add a function to get the persons age at a given date
- *      ageAt(date)
- *      
- * - Write a function that creates a copy of the person with a different birthdate
+ *      -> ageAt(date)
+ *
+ * - Write a main function that creates a new person and prints the toString, hashcode, fullname and age on 2000/1/1 for the person
+ *
+ * - Also in the main function, create a copy of the original person with a different birthdate and print the tostring
  */
 
 data class Person(
@@ -32,8 +34,10 @@ data class Person(
 }
 
 fun main(args: Array<String>) {
-    val person = Person("Jarno", "Walgemoed", LocalDate.of(1980, 6, 6), "email@bla.nl")
-    person.emailAddress = "mutable@email.com"
+    val person = Person("Person", "One", LocalDate.of(1980, 6, 6), "my@email.com")
+
+    println(person.toString())
+    println(person.hashCode())
     println(person.fullname)
     println(person.ageAt(LocalDate.of(2000, 1, 1)))
     

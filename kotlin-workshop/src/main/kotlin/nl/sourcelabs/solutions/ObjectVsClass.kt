@@ -1,4 +1,4 @@
-package nl.sourcelabs.kotlin
+package nl.sourcelabs.solutions
 
 /**
  * Define an object called HelloworldO.

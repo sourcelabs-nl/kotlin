@@ -1,4 +1,4 @@
-package nl.sourcelabs.kotlin
+package nl.sourcelabs.solutions
 
 /**
  * Define a toplevel function "sum" that adds two integers together
@@ -25,6 +25,10 @@ fun Int.add(what: Int): Int {
 infix fun Int.plus(what: Int): Int {
     return this + what
 }
+
+/**
+ * Write a main function to call the functions
+ */
 
 fun main(args: Array<String>) {
     val sum = sum(1,1)

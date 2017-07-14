@@ -1,4 +1,4 @@
-package nl.sourcelabs.kotlin.kotlinworkshop
+package nl.sourcelabs.solutions.kotlinworkshop
 
 import org.junit.Test
 import org.junit.runner.RunWith

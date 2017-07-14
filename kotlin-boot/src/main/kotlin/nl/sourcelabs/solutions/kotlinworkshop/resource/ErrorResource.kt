@@ -1,6 +1,6 @@
-package nl.sourcelabs.kotlin.kotlinworkshop.resource
+package nl.sourcelabs.solutions.kotlinworkshop.resource
 
-import nl.sourcelabs.kotlin.kotlinworkshop.domain.ServiceError
+import nl.sourcelabs.solutions.kotlinworkshop.domain.ServiceError
 import org.slf4j.LoggerFactory
 import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.http.ResponseEntity

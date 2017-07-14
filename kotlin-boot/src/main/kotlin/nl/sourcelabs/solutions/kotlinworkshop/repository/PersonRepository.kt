@@ -1,9 +1,9 @@
-package nl.sourcelabs.kotlin.kotlinworkshop.repository
+package nl.sourcelabs.solutions.kotlinworkshop.repository
 
-import nl.sourcelabs.kotlin.kotlinworkshop.domain.Person
-import nl.sourcelabs.kotlin.kotlinworkshop.util.params
-import nl.sourcelabs.kotlin.kotlinworkshop.util.toLocalDate
-import nl.sourcelabs.kotlin.kotlinworkshop.util.toMillis
+import nl.sourcelabs.solutions.kotlinworkshop.domain.Person
+import nl.sourcelabs.solutions.kotlinworkshop.util.params
+import nl.sourcelabs.solutions.kotlinworkshop.util.toLocalDate
+import nl.sourcelabs.solutions.kotlinworkshop.util.toMillis
 import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import org.springframework.jdbc.support.GeneratedKeyHolder

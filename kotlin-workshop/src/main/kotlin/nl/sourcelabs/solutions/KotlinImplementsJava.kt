@@ -1,4 +1,4 @@
-package nl.sourcelabs.kotlin
+package nl.sourcelabs.solutions
 
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener

@@ -1,7 +1,7 @@
-package nl.sourcelabs.kotlin.kotlinworkshop.resource
+package nl.sourcelabs.solutions.kotlinworkshop.resource
 
-import nl.sourcelabs.kotlin.kotlinworkshop.domain.Person
-import nl.sourcelabs.kotlin.kotlinworkshop.repository.PersonRepository
+import nl.sourcelabs.solutions.kotlinworkshop.domain.Person
+import nl.sourcelabs.solutions.kotlinworkshop.repository.PersonRepository
 import org.springframework.web.bind.annotation.*
 
 @RestController

@@ -1,4 +1,4 @@
-package nl.sourcelabs.kotlin.kotlinworkshop.util
+package nl.sourcelabs.solutions.kotlinworkshop.util
 
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource
 

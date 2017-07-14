@@ -1,4 +1,4 @@
-package nl.sourcelabs.kotlin.kotlinworkshop
+package nl.sourcelabs.solutions.kotlinworkshop
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
