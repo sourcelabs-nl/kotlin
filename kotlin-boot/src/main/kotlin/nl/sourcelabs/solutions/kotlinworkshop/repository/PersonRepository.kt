@@ -1,57 +1,53 @@
 package nl.sourcelabs.solutions.kotlinworkshop.repository
 
 import nl.sourcelabs.solutions.kotlinworkshop.domain.Person
-import nl.sourcelabs.solutions.kotlinworkshop.util.params
-import nl.sourcelabs.solutions.kotlinworkshop.util.toLocalDate
-import nl.sourcelabs.solutions.kotlinworkshop.util.toMillis
-import org.springframework.dao.EmptyResultDataAccessException
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
-import org.springframework.jdbc.support.GeneratedKeyHolder
+import nl.sourcelabs.solutions.kotlinworkshop.repository.mapper.PersonMapper
+import nl.sourcelabs.solutions.kotlinworkshop.util.*
 import org.springframework.stereotype.Repository
-import java.sql.ResultSet
-import javax.sql.DataSource
-
-val mapper = { rs: ResultSet, _: Int ->
-    Person(
-            id = rs.getInt("id"),
-            firstName = rs.getString("firstname"),
-            lastName = rs.getString("lastname"),
-            birthDate = rs.getLong("birthdate").toLocalDate(),
-            email = rs.getString("email")
-    )
-}
 
 @Repository
-class PersonRepository(dataSource: DataSource) {
+class PersonRepository {
 
-    private val jdbcTemplate = NamedParameterJdbcTemplate(dataSource)
-
-    fun findPerson(id: Int): Person {
-        return jdbcTemplate.queryForObject("select * from person where id=:id", params { it.addValue("id", id) }, mapper)
+    fun findPersonById(id: Int) = findOne <Person> {
+        usingStatement { "SELECT * FROM person WHERE id=:id" }
+        usingParameters { map("id" to id) }
+        usingMapper { PersonMapper }
     }
 
-    fun findPersons(): List<Person> {
-        return jdbcTemplate.query("select * from person", mapper)
+    fun findPersons() = findAll <Person> {
+        usingStatement { "SELECT * FROM person" }
+        usingMapper { PersonMapper }
     }
 
-    fun delete(id: Int) {
-        if (jdbcTemplate.update("delete from person where id=:id", params { it.addValue("id", id) }) == 0) {
-            throw EmptyResultDataAccessException(1)
+    fun deletePerson(id: Int) = delete {
+        usingStatement { "DELETE FROM person WHERE id=:id" }
+        usingParameters { map("id" to id) }
+    }
+
+    fun insertPerson(person: Person) = insert {
+        usingStatement {
+            "INSERT INTO person (firstname, lastname, birthdate, email) " +
+                    "VALUES (:firstname, :lastname, :birthdate, :email)"
+        }
+        usingParameters {
+            map("firstname" to person.firstName)
+            map("lastname" to person.lastName)
+            map("birthdate" to person.birthDate.toMillis())
+            map("email" to person.email)
         }
     }
-
-    fun save(person: Person): Person {
-        val keyHolder = GeneratedKeyHolder()
-        jdbcTemplate.update("insert into person (firstname, lastname, birthdate, email) values (:firstname, :lastname, :birthdate, :email)", params { 
-            it.addValue("firstname", person.firstName)
-            it.addValue("lastname", person.lastName)
-            it.addValue("birthdate", person.birthDate.toMillis())
-            it.addValue("email", person.email)
-        }, keyHolder)
-        
-        if(keyHolder.key != null) {
-            return findPerson(keyHolder.key as Int)
+    
+    fun updatePerson(id: Int, person: Person) = update {
+        usingStatement { 
+            "UPDATE person SET firstname=:firstname, lastname=:lastname, birthdate=:birthdate, email=:email " +
+                    "WHERE id=:id" 
         }
-        throw RuntimeException("Can't create person")
+        usingParameters {
+            map("id" to id)
+            map("firstname" to person.firstName)
+            map("lastname" to person.lastName)
+            map("birthdate" to person.birthDate.toMillis())
+            map("email" to person.email)
+        }
     }
 }
