@@ -2,34 +2,53 @@ package nl.sourcelabs.instructor
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
+import org.junit.Test
+import org.testng.Assert
 
+val objectMapper = ObjectMapper().registerModule(KotlinModule())
+
+/**
+ * Some message envelope containing a json payload.
+ */
 class MessageEnvelope(val payload: String)
 
-class MessageHandler<T> {
+/**
+ * Representation of the json message payload.
+ */
+class Message(val message: String)
 
-    val objectMapper = ObjectMapper().registerModule(KotlinModule())
+/**
+ * Broken version without the reified generics
+ * Does not work because the type information on the class is not
+ * available at runtime due to type erasure.
+ */
+//class MessageHandler<out T> {
+//
+//    // Does not work because of type erasure
+//    fun handleMessage(message: MessageEnvelope): T {
+//        return objectMapper.readValue(message.payload, T::class.java)
+//    }
+//}
 
-    // Does not work because of type erasure
-//  fun handleMessage(message: MessageEnvelope): T {
-//      return objectMapper.readValue(message.payload, T::class.java)
-//  }
+/**
+ * Instead of defining the type on the class we add the <reified T> to handleMessage.
+ * Now the compiler can reify the type for the handleMessage at the invocation point.
+ */
+class MessageHandler {
 
     // Does work because all of the type information is in the inline function call
-    inline fun <reified R> handleMessage(message: MessageEnvelope): R {
-        return objectMapper.readValue(message.payload, R::class.java)
+    inline fun <reified T> handleMessage(message: MessageEnvelope): T {
+        return objectMapper.readValue(message.payload, T::class.java)
     }
 }
 
-class Message(val message: String)
+class MessageHandlerTest {
+    @Test
+    fun testHandleMessage() {
+        val messageEnvelope = MessageEnvelope(payload = """{ "message": "Hello world!" }""")
+        // We need to explicitly define the type for m otherwise the compiler cannot reify it!
+        val m: Message = MessageHandler().handleMessage(messageEnvelope)
 
-fun main(args: Array<String>) {
-    val messageEnvelope = MessageEnvelope(payload = """{ "message": "Hello world!" }""")
-
-    // Does not work because type is not specified for m
-//  val m = MessageHandler<Message>().handleMessage(messageEnvelope)
-
-    // Works because type can be reified from m
-    val m: Message = MessageHandler<Message>().handleMessage(messageEnvelope)
-
-    println(m.message)
+        Assert.assertEquals("Hello world!", m.message)
+    }
 }
