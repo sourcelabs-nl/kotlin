@@ -9,10 +9,11 @@ class Message(val message: String)
 
 class MessageConverter {
 
-    val objectMapper = ObjectMapper().registerModule(KotlinModule())
+    val objectMapper = ObjectMapper().registerModule(KotlinModule())!!
 
     /**
-     * Version without the reified generics, we need to pass the type Class because the T (type) info is not usable at runtime due to type erasure.
+     * Version without the reified generics, we need to pass the type Class because
+     * the T (type) info is not usable at runtime due to type erasure.
      */
     fun <T> convert(jsonMessage: String, clazz: Class<T>): T {
         return objectMapper.readValue(jsonMessage, clazz)
