@@ -32,7 +32,7 @@ class MessageConverter {
 class MessageHandlerTest {
 
     @Test
-    fun testHandleMessage() {
+    fun testConvert() {
         val jsonString = """{ "message": "Hello world!" }"""
 
         val m = MessageConverter().convert(jsonString, Message::class.java)
@@ -41,7 +41,7 @@ class MessageHandlerTest {
     }
 
     @Test
-    fun testHandleMessageWithReified() {
+    fun testConvertWithReified() {
         val jsonString = """{ "message": "Hello world!" }"""
 
         val m = MessageConverter().convert<Message>(jsonString)
