@@ -22,7 +22,7 @@ class MessageConverter {
     /**
      * Instead of passing the class we add the <reified T> to the function declaration.
      * Now the compiler can reify the type for the convert at the invocation point.
-     * Note that this only works for inline functions!
+     * Note that reified only works with inline functions!
      */
     inline fun <reified T> convert(jsonMessage: String): T {
         return objectMapper.readValue(jsonMessage, T::class.java)
