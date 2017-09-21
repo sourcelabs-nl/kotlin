@@ -4,7 +4,7 @@ package nl.sourcelabs.instructor
  * Using higher order functions (=function with another function as a parameter) in Kotlin feels very natural while using it.
  * But it causes some memory overhead due to the usage of Lambdas. To optimize this behaviour kotlin allows you to inline
  * these higher-order functions. Which means that the compiler will copy the code of the inline function to the call site and
- * not using an Object for it.
+ * not using an additional Function and corresponding instance for it.
  *
  * Consider the following method which times the duration of the execution of a function. We pass the function as an argument to
  * the stopwatch method. stopwatch is therefore an higher-order function because it accepts a function as an argument.
