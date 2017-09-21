@@ -46,8 +46,8 @@ class MessageHandlerTest {
     @Test
     fun testHandleMessage() {
         val messageEnvelope = MessageEnvelope(payload = """{ "message": "Hello world!" }""")
-        // We need to explicitly define the type for m otherwise the compiler cannot reify it!
-        val m: Message = MessageHandler().handleMessage(messageEnvelope)
+
+        val m = MessageHandler().handleMessage<Message>(messageEnvelope)
 
         Assert.assertEquals("Hello world!", m.message)
     }
