@@ -3,7 +3,7 @@ package nl.sourcelabs.instructor
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import org.junit.Test
-import org.testng.Assert
+import org.junit.Assert
 
 val objectMapper = ObjectMapper().registerModule(KotlinModule())
 
